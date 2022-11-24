@@ -1,0 +1,26 @@
+const fs=require('fs');
+//to create  new file in nofe challengefile
+//fs.mkdirSync('garima');
+fs.writeFileSync('garima/bio.txt',"hey there,");
+//for adding some extra information.
+fs.appendFileSync('garima/bio.txt',"hey complrte your challenge ok,   do your work one day you will definetaly get the result..");
+//now read the text file..
+const read=fs.readFileSync('garima/bio.txt');
+//it will print the buffer data...
+console.log(read);
+//now to chnage buffer data into actual data..
+org_read=read.toString();
+//now it will read actual data
+console.log(org_read);
+//we can directly read the iroiginal data..using utf8
+//utf8 is used to decrypt the buffer text to orignal data
+let r=fs.readFileSync('garima/bio.txt','utf8');
+console.log(r); 
+
+//now change the file name of bio.txt..
+fs.renameSync('garima/bio.txt','garima/my_bio.txt');
+//now delete everytging..file and folder both..
+//for delete folder..
+fs.unlinkSync('garima/my_bio.txt');
+//now remove folder..
+fs.rmdirSync('garima');
